@@ -1,29 +1,26 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { RecipesComponent } from './Components/recipes/recipes.component';
-import { RecipeListComponent } from './Components/recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './Components/recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './Components/recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './Components/shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './Components/shopping-list/shopping-edit/shopping-edit.component';
+
+import { AuthModule } from './Components/auth/auth.module';
+import { SharedModule } from './Components/shared/shared.module';
+import { CoreModule } from './core.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    AuthModule,
+    SharedModule,
+    CoreModule,
   ],
-  imports: [BrowserModule, FontAwesomeModule],
-  providers: [],
+  declarations: [AppComponent, HeaderComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

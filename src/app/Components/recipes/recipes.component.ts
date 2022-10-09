@@ -6,10 +6,8 @@ import { recipe } from './recipe.model';
   templateUrl: './recipes.component.html',
   styleUrls: ['./recipes.component.css'],
 })
-export class RecipesComponent implements OnInit {
+export class RecipesComponent {
   selectedRecipe!: recipe;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }
