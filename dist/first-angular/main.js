@@ -281,14 +281,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "AuthService": () => (/* binding */ AuthService)
 /* harmony export */ });
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ 6317);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 3158);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 9337);
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 5474);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs */ 6317);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs */ 3158);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs */ 9337);
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs */ 5474);
 /* harmony import */ var _user_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./user.model */ 6270);
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/core */ 2560);
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ 8987);
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ 124);
+/* harmony import */ var src_environments_environment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/environments/environment */ 2340);
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/common/http */ 8987);
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ 124);
+
 
 
 
@@ -298,20 +300,22 @@ class AuthService {
     constructor(httpClient, router) {
         this.httpClient = httpClient;
         this.router = router;
-        this.user = new rxjs__WEBPACK_IMPORTED_MODULE_1__.BehaviorSubject(null);
+        this.user = new rxjs__WEBPACK_IMPORTED_MODULE_2__.BehaviorSubject(null);
         this.token = null;
     }
     signup(email, password) {
         return this.httpClient
-            .post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyC1dBj6BBfSqfb9NUojZ0Kv7cxwgoKZP_w', { email: email, password: password, returnSecureToken: true })
-            .pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.catchError)(this.handleError), (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.tap)((resData) => {
+            .post('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' +
+            src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.fireBaseAPIKey, { email: email, password: password, returnSecureToken: true })
+            .pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.catchError)(this.handleError), (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.tap)((resData) => {
             this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
         }));
     }
     login(email, password) {
         return this.httpClient
-            .post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC1dBj6BBfSqfb9NUojZ0Kv7cxwgoKZP_w', { email: email, password: password, returnSecureToken: true })
-            .pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_2__.catchError)(this.handleError), (0,rxjs__WEBPACK_IMPORTED_MODULE_3__.tap)((resData) => {
+            .post('https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=' +
+            src_environments_environment__WEBPACK_IMPORTED_MODULE_1__.environment.fireBaseAPIKey, { email: email, password: password, returnSecureToken: true })
+            .pipe((0,rxjs__WEBPACK_IMPORTED_MODULE_3__.catchError)(this.handleError), (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.tap)((resData) => {
             this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
         }));
     }
@@ -352,7 +356,7 @@ class AuthService {
     handleError(errorRes) {
         let errorMsg = 'Unknown error occured';
         if (!errorRes.error || !errorRes.error.error) {
-            return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.throwError)(() => errorMsg);
+            return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.throwError)(() => errorMsg);
         }
         switch (errorRes.error.error.message) {
             case 'EMAIL_EXISTS':
@@ -365,11 +369,11 @@ class AuthService {
                 errorMsg = 'Incorrect password';
                 break;
         }
-        return (0,rxjs__WEBPACK_IMPORTED_MODULE_4__.throwError)(() => errorMsg);
+        return (0,rxjs__WEBPACK_IMPORTED_MODULE_5__.throwError)(() => errorMsg);
     }
 }
-AuthService.ɵfac = function AuthService_Factory(t) { return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_6__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_7__.Router)); };
-AuthService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_5__["ɵɵdefineInjectable"]({ token: AuthService, factory: AuthService.ɵfac, providedIn: 'root' });
+AuthService.ɵfac = function AuthService_Factory(t) { return new (t || AuthService)(_angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_common_http__WEBPACK_IMPORTED_MODULE_7__.HttpClient), _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵinject"](_angular_router__WEBPACK_IMPORTED_MODULE_8__.Router)); };
+AuthService.ɵprov = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵdefineInjectable"]({ token: AuthService, factory: AuthService.ɵfac, providedIn: 'root' });
 
 
 /***/ }),
@@ -991,6 +995,7 @@ __webpack_require__.r(__webpack_exports__);
 const environment = {
     production: false,
     x: 'default',
+    fireBaseAPIKey: 'AIzaSyC1dBj6BBfSqfb9NUojZ0Kv7cxwgoKZP_w',
 };
 
 
