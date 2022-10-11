@@ -142,10 +142,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "ShoppingListComponent": () => (/* binding */ ShoppingListComponent)
 /* harmony export */ });
+/* harmony import */ var _angular_animations__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/animations */ 4851);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ 2560);
 /* harmony import */ var _shopping_service__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shopping.service */ 3412);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ 4666);
 /* harmony import */ var _shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shopping-edit/shopping-edit.component */ 1422);
+
 
 
 
@@ -179,16 +181,31 @@ class ShoppingListComponent {
     }
 }
 ShoppingListComponent.ɵfac = function ShoppingListComponent_Factory(t) { return new (t || ShoppingListComponent)(_angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdirectiveInject"](_shopping_service__WEBPACK_IMPORTED_MODULE_0__.ShoppingService)); };
-ShoppingListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: ShoppingListComponent, selectors: [["app-shopping-list"]], decls: 6, vars: 1, consts: [[1, "row"], [1, "col-xs-10"], [1, "list-grop"], ["class", "list-group-item", "style", "cursor:pointer", 3, "click", 4, "ngFor", "ngForOf"], [1, "list-group-item", 2, "cursor", "pointer", 3, "click"]], template: function ShoppingListComponent_Template(rf, ctx) { if (rf & 1) {
+ShoppingListComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵdefineComponent"]({ type: ShoppingListComponent, selectors: [["app-shopping-list"]], decls: 6, vars: 2, consts: [[1, "row"], [1, "col-xs-10"], [1, "list-grop"], ["class", "list-group-item", "style", "cursor:pointer", 3, "click", 4, "ngFor", "ngForOf"], [1, "list-group-item", 2, "cursor", "pointer", 3, "click"]], template: function ShoppingListComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](0, "div", 0)(1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelement"](2, "app-shopping-edit")(3, "hr");
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementStart"](4, "ul", 2);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵtemplate"](5, ShoppingListComponent_a_5_Template, 2, 2, "a", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵelementEnd"]()()();
     } if (rf & 2) {
+        _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("@shoppingList", undefined);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵadvance"](5);
         _angular_core__WEBPACK_IMPORTED_MODULE_2__["ɵɵproperty"]("ngForOf", ctx.ingredients);
-    } }, dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_1__.ShoppingEditComponent], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaG9wcGluZy1saXN0LmNvbXBvbmVudC5zY3NzIn0= */"] });
+    } }, dependencies: [_angular_common__WEBPACK_IMPORTED_MODULE_3__.NgForOf, _shopping_edit_shopping_edit_component__WEBPACK_IMPORTED_MODULE_1__.ShoppingEditComponent], styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzaG9wcGluZy1saXN0LmNvbXBvbmVudC5zY3NzIn0= */"], data: { animation: [
+            (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.trigger)('shoppingList', [
+                (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.state)('in', (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.style)({
+                    opacity: 1,
+                    transition: 'transformX(0)',
+                })),
+                (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.transition)('void => *', [
+                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.style)({ opacity: 0, transition: 'transformX(-5%)' }),
+                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.animate)(500),
+                ]),
+                (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.transition)('* => void', [
+                    (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.animate)('500ms 0.1s ease-in', (0,_angular_animations__WEBPACK_IMPORTED_MODULE_4__.style)({ opacity: 0, transition: 'transformX(-5%)' })),
+                ]),
+            ]),
+        ] } });
 
 
 /***/ }),

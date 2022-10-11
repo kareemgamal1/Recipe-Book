@@ -846,10 +846,12 @@ const routes = [
     {
         path: 'recipes',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_Components_recipes_recipes_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./Components/recipes/recipes.module */ 1531)).then((m) => m.RecipesModule),
+        data: { animation: 'recipes' },
     },
     {
         path: 'shopping',
         loadChildren: () => __webpack_require__.e(/*! import() */ "src_app_Components_shopping-list_shopping_module_ts").then(__webpack_require__.bind(__webpack_require__, /*! ./Components/shopping-list/shopping.module */ 3144)).then((m) => m.ShoppingModule),
+        data: { animation: 'shopping' },
     },
 ];
 class AppRoutingModule {
@@ -916,10 +918,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ 8987);
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.component */ 5041);
 /* harmony import */ var _Components_header_header_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Components/header/header.component */ 9573);
+/* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/platform-browser/animations */ 7146);
 /* harmony import */ var _Components_auth_auth_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Components/auth/auth.module */ 2103);
 /* harmony import */ var _Components_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Components/shared/shared.module */ 8);
 /* harmony import */ var _core_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./core.module */ 1538);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ 2560);
+
 
 
 
@@ -940,14 +944,16 @@ AppModule.ɵinj = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵ
         _angular_common_http__WEBPACK_IMPORTED_MODULE_9__.HttpClientModule,
         _Components_auth_auth_module__WEBPACK_IMPORTED_MODULE_3__.AuthModule,
         _Components_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__.SharedModule,
-        _core_module__WEBPACK_IMPORTED_MODULE_5__.CoreModule] });
+        _core_module__WEBPACK_IMPORTED_MODULE_5__.CoreModule,
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__.BrowserAnimationsModule] });
 (function () { (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_6__["ɵɵsetNgModuleScope"](AppModule, { declarations: [_app_component__WEBPACK_IMPORTED_MODULE_1__.AppComponent, _Components_header_header_component__WEBPACK_IMPORTED_MODULE_2__.HeaderComponent], imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_7__.BrowserModule,
         _app_routing_module__WEBPACK_IMPORTED_MODULE_0__.AppRoutingModule,
         _angular_forms__WEBPACK_IMPORTED_MODULE_8__.FormsModule,
         _angular_common_http__WEBPACK_IMPORTED_MODULE_9__.HttpClientModule,
         _Components_auth_auth_module__WEBPACK_IMPORTED_MODULE_3__.AuthModule,
         _Components_shared_shared_module__WEBPACK_IMPORTED_MODULE_4__.SharedModule,
-        _core_module__WEBPACK_IMPORTED_MODULE_5__.CoreModule] }); })();
+        _core_module__WEBPACK_IMPORTED_MODULE_5__.CoreModule,
+        _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_10__.BrowserAnimationsModule] }); })();
 
 
 /***/ }),
