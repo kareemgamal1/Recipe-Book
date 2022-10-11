@@ -1,8 +1,16 @@
 <div class="row">
+  <div class="col-xs-12">
+    <button (click)="onNewRecipe()">New Recipe</button>
+    <hr>
+  </div>
+</div>
+
+<div class="row">
   <div class="col-md-5">
     <app-recipe-list></app-recipe-list>
   </div>
-  <div class="col-md-7">
+  <div class="col-md-7" [@routeAnimations]="getRouteAnimationData()">
+    <div class="test">
+    </div>
     <router-outlet></router-outlet>
   </div>
-</div>

@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthModule } from './Components/auth/auth.module';
 import { SharedModule } from './Components/shared/shared.module';
@@ -19,6 +20,7 @@ import { CoreModule } from './core.module';
     AuthModule,
     SharedModule,
     CoreModule,
+    BrowserAnimationsModule,
   ],
   declarations: [AppComponent, HeaderComponent],
   bootstrap: [AppComponent],

@@ -9,13 +9,15 @@ const routes: Routes = [
       import('./Components/recipes/recipes.module').then(
         (m) => m.RecipesModule
       ),
+    data: { animation: 'recipes' },
   },
   {
     path: 'shopping',
     loadChildren: () =>
       import('./Components/shopping-list/shopping.module').then(
         (m) => m.ShoppingModule
-      ), 
+      ),
+    data: { animation: 'shopping' },
   },
 ];
 

@@ -24,8 +24,10 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.2",
+    "animations": "^0.0.0",
     "bootstrap": "^3.4.1",
     "ngx-bootstrap": "^9.0.0",
+    "platform-browser": "^0.0.1-security",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

@@ -14,16 +14,22 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: '', component: RecipeStartComponent },
-      { path: 'new', component: RecipeEditComponent },
+      {
+        path: 'new',
+        component: RecipeEditComponent,
+        data: { animation: 'recipeNew' },
+      },
       {
         path: ':id',
         component: RecipeDetailComponent,
         resolve: [RecipesResolverService],
+        data: { animation: 'recipeDetail' },
       },
       {
         path: ':id/edit',
         component: RecipeEditComponent,
         resolve: [RecipesResolverService],
+        data: { animation: 'recipeEdit' },
       },
     ],
   },
